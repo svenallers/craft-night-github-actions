@@ -78,7 +78,8 @@ npx jest
 
 The test should fail, as we expected `true` to be `false`. 
 
-### Task Alter your build.yml and make sure the tests are executed in your build job. Commit and push the changes, create a PR and take a look at your build. You should find the failing test there. Then make sure, the failed test is also reflected in your PR.
+### Task 
+Alter your build.yml and make sure the tests are executed in your build job. Commit and push the changes, create a PR and take a look at your build. You should find the failing test there. Then make sure, the failed test is also reflected in your PR.
 
 ## Using secrets
 Everybody has secrets, rights? Sometimes we need the SSH Key to be confidential and sometimes it is an access token for a repository or some user credentials to download something we need for our application. We can store a secret in either the github organization or the repository. To store a secret in the repository open the Settings and go to Secrets. Create a new repository secret `test` and set the Value to `42`.
