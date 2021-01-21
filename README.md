@@ -117,4 +117,4 @@ In order to execute a build for different versions of node add the following to 
 ...
 ``` 
 
-Add this to the `build.yml`, commit and push this and create a PR. Please check the build. 
+Add this to the `build.yml`, commit and push this and create a PR. Take a look at your checks. There should be three builds running, for node 8, 10 and 12. 
