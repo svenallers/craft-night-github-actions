@@ -47,7 +47,36 @@ jobs:
 
 With this snippet we defined a job called `build`, that runs on the latest ubuntu, checks out the repo and lists the files in the repository. In order to test this push the branch and create a PR. You should then see a check on your PR. Open the details and check the output. 
 
-In order to do something useful, like executing some tests or start a build please create a project in this repository and adjust the build file to execute tests and build (if needed). To make 
+In order to do something useful, like executing some tests or start a build please create a project in this repository and adjust the build file to execute tests and build (if needed). To make it easy lets create an npm project with jest to execute a test:
+
+```
+npm init
+```
+
+Answer all the questions and add jest and npx as a dependency
+
+```
+npm install -s jest
+```
+
+Now add a test file `test.spec.js` and put a simple test there. Please write a test that fails to make the failing test visible in your PR:
+
+```
+describe('example', function() {
+  it('should execute a test', function() {
+    expect(true).toBe(false)
+  })
+})
+
+```
+
+Now run the test to make sure, it is executed and fails:
+
+```
+npx jest
+```
+
+The test should fail, as we expected `true` to be `false`. Alter your build.yml and make sure the tests are executed in your build job. Commit and push the changes, create a PR and take a look at your build. You should find the failing test there. Then make sure, the failed test is also reflected in your PR.
 
 ## Triggering with a webhook
 
