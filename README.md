@@ -76,7 +76,29 @@ Now run the test to make sure, it is executed and fails:
 npx jest
 ```
 
-The test should fail, as we expected `true` to be `false`. Alter your build.yml and make sure the tests are executed in your build job. Commit and push the changes, create a PR and take a look at your build. You should find the failing test there. Then make sure, the failed test is also reflected in your PR.
+The test should fail, as we expected `true` to be `false`. 
 
-## Triggering with a webhook
+### Task 
+Alter your build.yml and make sure the tests are executed in your build job. Commit and push the changes, create a PR and take a look at your build. You should find the failing test there. Then make sure, the failed test is also reflected in your PR.
 
+## Using secrets
+Everybody has secrets, rights? Sometimes we need the SSH Key to be confidential and sometimes it is an access token for a repository or some user credentials to download something we need for our application. We can store a secret in either the github organization or the repository. To store a secret in the repository open the Settings and go to Secrets. Create a new repository secret `test` and set the Value to `42`.
+
+Now you can use this secret in your workflow file (in our case the build.yml) like this:
+
+```
+${{ test }}
+```
+
+But what, if you want to use it in a build script? You can set it as an environment variable:
+
+```
+ - name: Steup name
+        env:
+          super_secret: ${{ secrets.SUPERSECRET }}
+```          
+
+This environment variable will be available in the step (not the job!) you defined it for. Having a separate step to setup your environment sectes does not work!
+
+### Task
+Setup a secret and use this secret in a jest test. To access an environment variable in javascript use `process.env.<VARIABLE_NAME>`
