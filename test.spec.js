@@ -5,7 +5,4 @@ describe('example', function() {
     it('should find the secret', function() {
         expect(process.env.TEST_SECRET).toBe("foo")
     })
-    it('should find the secret (error)', function() {
-        expect(process.env.TEST_SECRET).toBe("foo2")
-    })
 })
