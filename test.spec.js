@@ -1,5 +1,11 @@
 describe('example', function() {
     it('should execute a test', function() {
-        expect(true).toBe(false)
+        expect(true).toBe(true)
+    })
+    it('should find the secret', function() {
+        expect(process.env.TEST_SECRET).toBe("foo")
+    })
+    it('should find the secret (error)', function() {
+        expect(process.env.TEST_SECRET).toBe("foo2")
     })
 })

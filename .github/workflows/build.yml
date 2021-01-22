@@ -13,4 +13,6 @@ jobs:
       - name: print something
         run: ls
       - name: test
+        env:
+          TEST_SECRET: ${{ secrets.MY_SECRET }}
         run: npx jest
