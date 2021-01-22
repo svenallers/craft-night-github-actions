@@ -56,7 +56,7 @@ npm init
 Answer all the questions and add jest and npx as a dependency
 
 ```
-npm install -s jest
+npm install -s jest npx
 ```
 
 Now add a test file `test.spec.js` and put a simple test there. Please write a test that fails to make the failing test visible in your PR:
