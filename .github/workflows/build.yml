@@ -8,5 +8,9 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v2
+      - name: install
+        run: npm install
       - name: print something
         run: ls
+      - name: test
+        run: npx jest
