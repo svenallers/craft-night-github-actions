@@ -135,3 +135,7 @@ The shortest interval you can run scheduled workflows is once every 5 minutes.
 
 ### Task
 Create a nightly build event that builds the project and runs all tests using the build matrix.
+
+**Hint:**
+
+<!-- _You'll have to create a new workflow file (yml)._ -->
