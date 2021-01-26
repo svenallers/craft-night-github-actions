@@ -120,3 +120,18 @@ In order to execute a build for different versions of node add the following to 
 
 Add this to the `build.yml`, commit and push this and create a PR. Take a look at your checks. There should be three builds running, for node 8, 10 and 12. 
 
+
+## Scheduled events
+The `schedule` event allows you to trigger a workflow at a scheduled time.
+
+You can schedule a workflow to run at specific UTC times using [POSIX cron syntax](https://pubs.opengroup.org/onlinepubs/9699919799/utilities/crontab.html#tag_20_25_07). 
+Scheduled workflows run on the latest commit on the default or base branch. 
+The shortest interval you can run scheduled workflows is once every 5 minutes.
+
+    on:
+      schedule:
+        # * is a special character in YAML so you have to quote this string
+        - cron:  '*/15 * * * *'
+
+### Task
+Create a nightly build event that builds the project and runs all tests using the build matrix.
