@@ -1,4 +1,4 @@
-![Node.js CI](https://github.com/gordon-git/craft-night-github-actions/workflows/Node.js%20CI/badge.svg)
+[![Node.js CI](https://github.com/gordon-git/craft-night-github-actions/workflows/Node.js%20CI/badge.svg "Status")](https://github.com/gordon-git/craft-night-github-actions/actions?query=workflow%3A%22Node.js+CI%22)
 
 # craft-night-github-actions
 
