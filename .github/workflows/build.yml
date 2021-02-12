@@ -1,0 +1,17 @@
+name: Silpion Craft-Night example
+on: pull_request
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [ 8, 10, 12 ]
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+      - name: print something
+        run: ls
+      - name: run tests
+        env:
+          secret: ${{ secrets.SOME_SECRET }}
+        run: npx jest
